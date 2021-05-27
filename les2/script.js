@@ -1,10 +1,29 @@
+let achtergrond = document.getElementsByClassName("achtergrond");
+let text = document.getElementsByClassName("text");
+const mybtn = document.getElementById("btn")
+let achterkleur = ["green", "red", "yellow"];
+let textkleur = ["orange", "black", "purple"];
 
-let alineas = document.getElementsByTagName("p");
-
-for(let i = 0; i < alineas.length;i++){
-    alineas[i].addEventListener("click",(evt)=>{
-        console.log(evt.target);
-        evt.target.style.background = "red"
+for (let i = 0; i < achtergrond.length;i++){
+    achtergrond[i].addEventListener("click",function(){
+        setachtergrond(i)
     });
 }
 
+function setachtergrond(i){
+    document.body.style.background = achterkleur[i]
+}
+
+for (let i = 0; i < text.length;i++){
+    text[i].addEventListener("click",function(){
+        setvoorgrond(i)
+    });
+}
+
+function setvoorgrond(i){
+    document.body.style.color = textkleur[i]
+}
+
+mybtn.addEventListener("click", ()=> {
+    window.location.reload();
+})
