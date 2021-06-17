@@ -1,13 +1,21 @@
-let getalA,getalB,antwoord,jouwAntwoord,goedfout; 
+let getalA,getalB,antwoord,jouwAntwoord,goedfout,tafel; 
 
 const opgaveblad = document.getElementById('opgaveblad');
 const input1 = document.getElementById('input1');
 const execButton = document.getElementById('execButton');
+const tafelnummer = document.getElementById('tafel10')
+
+tafel = 10
+
+function tafel20(){
+    tafel = 20
+    maakOpgave()
+}
 
 maakOpgave();
 function maakOpgave(){
-    getalA = Math.floor(Math.random()* 10) + 1;
-    getalB = Math.floor(Math.random()* 10) + 1;
+    getalA = Math.floor(Math.random()* tafel) + 1;
+    getalB = Math.floor(Math.random()* tafel) + 1;
     antwoord = getalA * getalB;
 
     opgaveblad.innerHTML = getalA + " x " + getalB;
@@ -34,3 +42,4 @@ function wachten(){
     input1.focus()
     maakOpgave()
 }
+
