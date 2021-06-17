@@ -42,4 +42,3 @@ function wachten(){
     input1.focus()
     maakOpgave()
 }
-
